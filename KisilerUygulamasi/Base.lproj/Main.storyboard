@@ -15,8 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-mw-HAC">
+                                <rect key="frame" x="146.5" y="432.5" width="121" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DenemeButton"/>
+                                <connections>
+                                    <action selector="denemeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Lc-dG-PzN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EZf-mw-HAC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hJH-Th-72x"/>
+                            <constraint firstItem="EZf-mw-HAC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="un4-PE-09I"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kişiler" id="7sa-zm-aDt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DF3-gp-csh">
@@ -40,14 +54,58 @@
                     <view key="view" contentMode="scaleToFill" id="nz3-PH-n8f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Adı" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOu-FZ-5dT">
+                                <rect key="frame" x="32" y="198" width="350" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BXn-ae-9vl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Tel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MPc-j0-xrY">
+                                <rect key="frame" x="32" y="298" width="350" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ryd-Ur-b4z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHs-eY-rjy">
+                                <rect key="frame" x="136" y="398" width="142" height="48.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="KAYDET">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonKaydet:" destination="uE7-sr-TuQ" eventType="touchUpInside" id="pcM-JW-52v"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="asu-IN-RcO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MPc-j0-xrY" firstAttribute="centerX" secondItem="nz3-PH-n8f" secondAttribute="centerX" id="46B-mU-vbj"/>
+                            <constraint firstItem="EHs-eY-rjy" firstAttribute="top" secondItem="MPc-j0-xrY" secondAttribute="bottom" constant="50" id="4aE-mX-WKj"/>
+                            <constraint firstItem="BOu-FZ-5dT" firstAttribute="leading" secondItem="asu-IN-RcO" secondAttribute="leading" constant="32" id="6fo-Yr-m85"/>
+                            <constraint firstItem="asu-IN-RcO" firstAttribute="trailing" secondItem="MPc-j0-xrY" secondAttribute="trailing" constant="32" id="7gv-y9-aQd"/>
+                            <constraint firstItem="MPc-j0-xrY" firstAttribute="top" secondItem="BOu-FZ-5dT" secondAttribute="bottom" constant="50" id="AlX-nN-7o1"/>
+                            <constraint firstItem="MPc-j0-xrY" firstAttribute="leading" secondItem="asu-IN-RcO" secondAttribute="leading" constant="32" id="BMh-dj-abC"/>
+                            <constraint firstItem="EHs-eY-rjy" firstAttribute="centerX" secondItem="nz3-PH-n8f" secondAttribute="centerX" id="KXG-Ba-RbM"/>
+                            <constraint firstItem="asu-IN-RcO" firstAttribute="trailing" secondItem="BOu-FZ-5dT" secondAttribute="trailing" constant="32" id="cNl-p7-6xl"/>
+                            <constraint firstItem="BOu-FZ-5dT" firstAttribute="top" secondItem="asu-IN-RcO" secondAttribute="top" constant="50" id="vOT-tT-wWH"/>
+                            <constraint firstItem="BOu-FZ-5dT" firstAttribute="centerX" secondItem="nz3-PH-n8f" secondAttribute="centerX" id="wcx-P9-Deu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kişi Kayıt" id="xs3-9W-9M0"/>
+                    <connections>
+                        <outlet property="tfKisiAd" destination="BOu-FZ-5dT" id="s1v-dS-2gy"/>
+                        <outlet property="tfKisiTel" destination="MPc-j0-xrY" id="xiJ-OZ-NDd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbj-bl-4Ga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="-251"/>
+            <point key="canvasLocation" x="1750.7246376811595" y="-251.11607142857142"/>
         </scene>
         <!--Kisi DetayVC-->
         <scene sceneID="Fhd-wu-goX">
@@ -71,7 +129,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ega-0m-fWZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fU9-Jh-5ed">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
