@@ -114,10 +114,55 @@
                     <view key="view" contentMode="scaleToFill" id="gze-p2-W3Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Adı" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pom-Z0-7eh">
+                                <rect key="frame" x="32" y="198" width="350" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yvc-Z3-zxT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kişi Tel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWL-Rw-kqk">
+                                <rect key="frame" x="32" y="298" width="350" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H0y-52-MV6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuj-qU-uRn">
+                                <rect key="frame" x="114" y="398" width="186" height="48.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GÜNCELLE">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonGuncelle:" destination="eFw-DZ-z3N" eventType="touchUpInside" id="Hve-A2-Klo"/>
+                                    <action selector="buttonKaydet:" destination="uE7-sr-TuQ" eventType="touchUpInside" id="d4K-nE-x62"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="R2j-E6-E6O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pom-Z0-7eh" firstAttribute="top" secondItem="R2j-E6-E6O" secondAttribute="top" constant="50" id="18n-rX-9pd"/>
+                            <constraint firstItem="R2j-E6-E6O" firstAttribute="trailing" secondItem="Pom-Z0-7eh" secondAttribute="trailing" constant="32" id="8Uf-eA-hd1"/>
+                            <constraint firstItem="RWL-Rw-kqk" firstAttribute="top" secondItem="Pom-Z0-7eh" secondAttribute="bottom" constant="50" id="DZa-n9-Vkd"/>
+                            <constraint firstItem="Tuj-qU-uRn" firstAttribute="centerX" secondItem="gze-p2-W3Z" secondAttribute="centerX" id="Qkm-cN-LSd"/>
+                            <constraint firstItem="Tuj-qU-uRn" firstAttribute="top" secondItem="RWL-Rw-kqk" secondAttribute="bottom" constant="50" id="Y50-9J-UbS"/>
+                            <constraint firstItem="Pom-Z0-7eh" firstAttribute="leading" secondItem="R2j-E6-E6O" secondAttribute="leading" constant="32" id="Yod-bF-3qC"/>
+                            <constraint firstItem="Pom-Z0-7eh" firstAttribute="centerX" secondItem="gze-p2-W3Z" secondAttribute="centerX" id="Zrr-t8-R6I"/>
+                            <constraint firstItem="R2j-E6-E6O" firstAttribute="trailing" secondItem="RWL-Rw-kqk" secondAttribute="trailing" constant="32" id="amV-D7-mHd"/>
+                            <constraint firstItem="RWL-Rw-kqk" firstAttribute="centerX" secondItem="gze-p2-W3Z" secondAttribute="centerX" id="kxj-6O-LXu"/>
+                            <constraint firstItem="RWL-Rw-kqk" firstAttribute="leading" secondItem="R2j-E6-E6O" secondAttribute="leading" constant="32" id="tFY-4L-2Jr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l94-SQ-yAK"/>
+                    <connections>
+                        <outlet property="tfKisiAd" destination="Pom-Z0-7eh" id="ciy-9i-3WQ"/>
+                        <outlet property="tfKisiTel" destination="RWL-Rw-kqk" id="xHJ-Ig-pQt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uZ-at-fzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
