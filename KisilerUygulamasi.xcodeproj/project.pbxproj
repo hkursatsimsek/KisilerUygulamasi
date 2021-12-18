@@ -15,6 +15,7 @@
 		7C303C8C276E0C0400C260B0 /* AnasayfaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C303C8B276E0C0400C260B0 /* AnasayfaVC.swift */; };
 		7C303C8E276E0D2A00C260B0 /* KisiKayitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C303C8D276E0D2A00C260B0 /* KisiKayitVC.swift */; };
 		7C303C90276E0D4B00C260B0 /* KisiDetayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C303C8F276E0D4B00C260B0 /* KisiDetayVC.swift */; };
+		7C303C92276E102100C260B0 /* Kisiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C303C91276E102100C260B0 /* Kisiler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7C303C8B276E0C0400C260B0 /* AnasayfaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnasayfaVC.swift; sourceTree = "<group>"; };
 		7C303C8D276E0D2A00C260B0 /* KisiKayitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiKayitVC.swift; sourceTree = "<group>"; };
 		7C303C8F276E0D4B00C260B0 /* KisiDetayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetayVC.swift; sourceTree = "<group>"; };
+		7C303C91276E102100C260B0 /* Kisiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				7C303C8B276E0C0400C260B0 /* AnasayfaVC.swift */,
 				7C303C8D276E0D2A00C260B0 /* KisiKayitVC.swift */,
 				7C303C8F276E0D4B00C260B0 /* KisiDetayVC.swift */,
+				7C303C91276E102100C260B0 /* Kisiler.swift */,
 				7C303C7D276E0B5600C260B0 /* Main.storyboard */,
 				7C303C80276E0B5900C260B0 /* Assets.xcassets */,
 				7C303C82276E0B5900C260B0 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				7C303C78276E0B5600C260B0 /* AppDelegate.swift in Sources */,
 				7C303C7A276E0B5600C260B0 /* SceneDelegate.swift in Sources */,
 				7C303C8E276E0D2A00C260B0 /* KisiKayitVC.swift in Sources */,
+				7C303C92276E102100C260B0 /* Kisiler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
