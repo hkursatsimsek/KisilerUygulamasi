@@ -64,4 +64,23 @@ extension AnasayfaVC: UITableViewDelegate, UITableViewDataSource {
 //        print("Kişi : \(kisi.kisi_id!) - \(kisi.kisi_ad!) - \(kisi.kisi_tel!)")
         tableView.deselectRow(at: indexPath, animated: true) // Satırın seçili görüntüsünü kaldırır.
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let silAction = UIContextualAction(style: .destructive, title: "Sil") { contextualAction, view, bool in
+            let kisi = self.kisilerListe[indexPath.row]
+            
+            let alert = UIAlertController(title: "Silme İşlemi", message: "\(kisi.kisi_ad!) silinsin mi ?", preferredStyle: .alert)
+            let iptalAction = UIAlertAction(title: "İptal", style: .cancel) { action in
+                // Tıklanınca bir şey yapmadım henüz
+            }
+            alert.addAction(iptalAction)
+            let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
+                print("\(kisi.kisi_id!) silindi.")
+            }
+            alert.addAction(evetAction)
+            self.present(alert, animated: true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [silAction])
+    }
 }
