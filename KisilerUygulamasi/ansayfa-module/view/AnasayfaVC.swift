@@ -13,6 +13,8 @@ class AnasayfaVC: UIViewController {
     
     var kisilerListe = [Kisiler]()
     
+    var anasayfaPresenterNesnesi:ViewToPresenterAnasayfaProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +23,9 @@ class AnasayfaVC: UIViewController {
         kisilerTableView.delegate = self
         kisilerTableView.dataSource = self
         
-        let k1 = Kisiler(kisi_id: 1, kisi_ad: "Ahmet", kisi_tel: "11111")
-        let k2 = Kisiler(kisi_id: 2, kisi_ad: "Zeynep", kisi_tel: "22222")
-        kisilerListe.append(k1)
-        kisilerListe.append(k2)
+        AnasayfaRouter.createModule(ref: self)
+        
+        anasayfaPresenterNesnesi?.kisileriYukle()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,9 +39,16 @@ class AnasayfaVC: UIViewController {
     
 }
 
+extension AnasayfaVC: PresenterToViewAnasayfaProtocol {
+    func vieweVeriGonder(kisilerListesi: Array<Kisiler>) {
+        self.kisilerListe = kisilerListesi
+        self.kisilerTableView.reloadData()
+    }
+}
+
 extension AnasayfaVC: UISearchBarDelegate { // AnasayfaVC ' i genişletiyoruz
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Arama sonucu : \(searchText)")
+        anasayfaPresenterNesnesi?.ara(aramaKelimesi: searchText)
     }
 }
 
@@ -75,7 +83,7 @@ extension AnasayfaVC: UITableViewDelegate, UITableViewDataSource {
             }
             alert.addAction(iptalAction)
             let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
-                print("\(kisi.kisi_id!) silindi.")
+                self.anasayfaPresenterNesnesi?.sil(kisi_id: kisi.kisi_id!)
             }
             alert.addAction(evetAction)
             self.present(alert, animated: true)
