@@ -23,8 +23,14 @@ class AnasayfaVC: UIViewController {
         kisilerTableView.delegate = self
         kisilerTableView.dataSource = self
         
+        veriTabaniKopyala()
+        
         AnasayfaRouter.createModule(ref: self)
         
+        anasayfaPresenterNesnesi?.kisileriYukle()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         anasayfaPresenterNesnesi?.kisileriYukle()
     }
     
@@ -35,6 +41,28 @@ class AnasayfaVC: UIViewController {
             let gidilecekVC = segue.destination as! KisiDetayVC
             gidilecekVC.kisi = kisi 
         }
+    }
+    
+    func veriTabaniKopyala() {
+        let bundleYolu = Bundle.main.path(forResource: "kisiler", ofType: ".sqlite")
+        let hedefYol = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask,true).first!
+        
+        let kopyalanacakYer = URL(fileURLWithPath: hedefYol).appendingPathComponent("kisiler.sqlite")
+        
+        let fileManager = FileManager.default
+        
+        if fileManager.fileExists(atPath: kopyalanacakYer.path) {
+            print("Veri tabanı zaten var")
+        } else {
+            // veri tabanı yok, koyalama işlemini yap
+            
+            do {
+                try fileManager.copyItem(atPath: bundleYolu!, toPath: kopyalanacakYer.path)
+            } catch{
+                
+            }
+        }
+        
     }
     
 }
